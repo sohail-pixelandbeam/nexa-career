@@ -1,0 +1,68 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: white;
+}
+
+.heading1{
+  font-size: 55px;
+  font-family: Poppins-SemiBold;
+  color: black;
+}
+
+.heading1 span{
+  color: #FFA63D;
+}
+
+.subHeading1{
+  color: black;
+  font-size: 19px;
+  margin: 10px 0px;
+}
+
+.text-center{
+  text-align: center;
+}
+
+.padding-x{
+  padding-left: 8%;
+  padding-right: 8%;
+}
+
+.padding-y{
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.padding{
+  padding: 5% 8%;
+}
+
+.mb-40{
+  margin-bottom: 40px;
+}
+
+.mb-50{
+  margin-bottom: 50px;
+}
+
+.mb-70{
+  margin-bottom: 70px;
+}
+
+.mb-100{
+  margin-bottom: 100px;
+}
+
+.mt-50{
+  margin-top:50px ;
+}
+
+.mt-40{
+  margin-top: 40px;
+}
+

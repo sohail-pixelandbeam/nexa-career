@@ -1,0 +1,259 @@
+.heading1-home{
+    line-height: 60px;
+}
+
+.home-hero{
+    padding-top: 50px;
+    background-color: #FFA63D;
+    min-height: 500px;
+    color: white;
+}
+
+.home-hero-left{
+    padding: 8%;
+    padding-top: 17%;
+    padding-left: 16%;
+}
+
+.home-hero-subHeading{
+    color: black;
+    line-height: 30px;
+    font-family: Space-Grotest-Bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.home-hero-heading{
+    font-family: Space-Grotest-Bold;
+    font-size: 74px;
+    text-transform: capitalize;
+    line-height: 84px;
+}
+
+.home-hero-heading span{
+    color: black;
+}
+
+.home-hero-right{
+    background-image: url('../../assets/img/hero-img-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: end;
+}
+
+.home-hero-right img{
+    width: 60%;
+    margin-right: 13%;
+}
+
+.home-hero-text{
+    font-size: 18px;
+    line-height: 28px;
+    margin: 15px 0px;
+}
+
+.home-hero-btns{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.home-stats{
+    background-color: #FCC292;
+    padding: 2% 8%;
+}
+
+.home-stat-card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.home-stat-card img{
+    width: 60px;
+}
+
+.home-stat-figure{
+    font-size: 32px;
+    color: #484848;
+    font-family: Poppins-SemiBold;
+}
+
+.home-stat-title{
+    color: #484848;
+    margin-top: 5px;
+}
+
+/* section 2  */
+.home-sec2{
+    background-color: #F6F6F6;
+}
+
+.home-sec2-card{
+    padding: 15px;
+}
+.home-sec2-icon{
+    width: 80px;
+}
+
+/* section 3  */
+.home-sec3-card{
+    padding-right: 5%;
+    /* border-right: 1px solid lightgray; */
+    /* background-color: lightgray; */
+    border-radius: 10px;
+    padding: 6%;
+    min-height: 320px;
+    box-shadow: 1px 10px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    color: #383838;
+    cursor: pointer;
+}
+
+.home-sec3-card:hover{
+    background-color: rgb(39, 39, 39);
+    color: white;
+    transition: 0.5s ease-in-out;
+
+}
+
+.home-sec3-card img{
+    width: 60px;
+}
+
+.home-sec3-heading{
+    font-size: 22px;
+    font-family: Poppins-SemiBold;
+    line-height: 30px;
+}
+
+.home-sec3-btnText{
+    font-family: Poppins-Medium;
+    display: flex;
+    align-items: center;
+}
+
+
+/* section 4  */
+.home-sec4-upperDiv{
+    background-color: black;
+    padding-top: 2%;
+}
+
+.home-sec4-tabs{
+    margin: 0px 8%;
+    background-color: #F6F6F6;
+    padding-top: 0px;
+    overflow: hidden;
+}
+
+.home-sec4-tab{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    padding-left: 10%;
+    padding-top: 5%;
+    padding-right: 25%;
+}
+
+.home-sec4-tab img{
+    width: 100px;
+}
+
+.active-home-sec4-tab{
+    background-color: white;
+}
+
+.home-sec4-lowerDiv{
+    padding: 3% 12%;
+}
+
+.home-sec4-card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.home-sec4-card-title1{
+    font-family: Poppins-SemiBold;
+    font-size: 14px;
+    line-height: 19px;
+    color: #484848;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.home-sec4-card-title2{
+    font-family: Poppins-SemiBold;
+    font-size: 20px;
+    color: #FFA63D;
+}
+
+.home-sec4-card-title3{
+    font-size: 16px;
+    line-height: 20px;
+    color: #888888;
+}
+
+.home-sec4-card-text{
+    font-size: 13px;
+    line-height: 20px;
+    color: #484848;
+}
+
+.home-sec4-card-btnText{
+    font-family: Poppins-SemiBold;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+
+/* section 5  */
+.home-sec5-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding-right: 10%;
+}
+.home-sec5-right img{
+    width: 100%;
+}
+
+/* section 6  */
+
+.home-sec6{
+    background-image: url('../../assets/img/home-sec6-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 8%;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .home-hero-btns{
+        display: flex;
+        align-items: flex-start;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 900px) {
+    .home-hero-heading{
+        font-size: 40px;
+        line-height: 50px;
+    }
+    
+}
