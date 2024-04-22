@@ -54,15 +54,20 @@ export default function NavBar({ active, hideModal }) {
 
     const onCursorEnter = (val) => {
         if (val) setActiveLink(val);
+        navigate(`/${val}`)
         setMenu(false);
     }
 
 
 
 
+
     return (
         <div className="navBar-Parent">
-            <div style={{ display: showNote ? 'block' : 'none' }} >
+            <div
+            style={{display:'none'}}
+            // style={{ display: showNote ? 'block' : 'none' }}
+             >
                 <div className="navBar-note">
                     <div className="navBar-note-left">
                         <div className="navBar-note-left-item">
@@ -100,12 +105,12 @@ export default function NavBar({ active, hideModal }) {
                             </div>}
                             <div
                                 className={activeLink === 'Home' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('Home')}
+                                onClick={() => onCursorEnter('')}
                             >Home
                             </div>
                             <div
                                 className={activeLink === 'AI Bot' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('AI Bot')}
+                                onClick={() => onCursorEnter('')}
                             >AI Bot
                             </div>
                             <div
@@ -115,12 +120,12 @@ export default function NavBar({ active, hideModal }) {
                             </div>
                             <div
                                 className={activeLink === 'Career' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('Career')}
+                                onClick={() => onCursorEnter('')}
                             >Career
                             </div>
                             <div
                                 className={activeLink === 'Contact Us' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('Contact Us')}
+                                onClick={() => onCursorEnter('')}
                             >Contact Us
                             </div>
 

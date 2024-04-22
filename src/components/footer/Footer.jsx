@@ -10,6 +10,11 @@ import linkedin from '../../assets/img/linkedin.png'
 import twitter from '../../assets/img/twitter.png'
 import facebook from '../../assets/img/facebook.png'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import twitter1 from '../../assets/img/twitter1.png'
+import facebook1 from '../../assets/img/facebook1.png'
+import linkedin1 from '../../assets/img/linkedin1.png'
+import instagram1 from '../../assets/img/instagram1.png'
+import instagram from '../../assets/img/instagram2.png'
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import forward from '../../assets/img/forward.png'
@@ -17,8 +22,26 @@ import Btn from '../btn/Btn'
 
 
 export default function Footer() {
-    const data1 = [facebook, twitter, linkedin, p]
-    const links = ['Jobs', 'AI Bot', 'Contact Us', 'Quizes'];
+    const data1 = [
+        {
+            img: facebook1,
+            name: 'facebook',
+        },
+        {
+            img: instagram,
+            name: 'instagram',
+        },
+        {
+            img:linkedin1,
+            name: 'linkedin',
+        },
+        {
+            img: twitter1,
+            name: 'twitter',
+        },
+    ]
+    // const data1 = [facebook, twitter, linkedin, p]
+    const links = ['Jobs', 'AI Bot', 'Contact Us'];
     return (
         <div className='footer-main'>
             <img src={pattern1} alt="pattern" className='footer-pattern1' />
@@ -66,7 +89,9 @@ export default function Footer() {
                                 data1.map((item, index) => {
                                     return (
                                         <div className="footer-social-icon">
-                                            <img src={item} alt="icon" key={index} />
+                                            <img src={item.img} alt="icon" key={index}
+                                            style={{width: item.name ==='instagram' ? '22px':'14px'}}
+                                            />
                                         </div>
                                     )
                                 })
@@ -115,7 +140,7 @@ export default function Footer() {
                 </Grid>
             </div>
             <div className="footer-lowest padding-x">
-                <div className="footer-text">© Yoursitename  2023 | All Rights Reserved</div>
+                <div className="footer-text">© Nex-a-Career  2023 | All Rights Reserved</div>
                 <div className='footer-lowest-links'>
                     <div className="footer-text footerLink-hover">Terms & Conditions</div>
                     <div className="footer-text footerLink-hover">Privacy Policy</div>

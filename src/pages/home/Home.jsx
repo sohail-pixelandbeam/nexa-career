@@ -185,10 +185,6 @@ export default function Home() {
             question:"Are the counseling sessions confidential?",
             answer:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
         },
-        {
-            question:"How does Nexa Career provide career counseling?",
-            answer:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
     ]
 
     const questions2 = [
@@ -202,10 +198,6 @@ export default function Home() {
         },
         {
             question:"Is there a fee for Nexa Career's services?",
-            answer:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question:"How does Nexa Career provide career counseling?",
             answer:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
         },
         {
@@ -383,18 +375,18 @@ export default function Home() {
                 <div className='home-sec7-questionsBox'>
                     <Grid container spacing={5}>
                         <Grid item sm={6} xs={12}>
-                           {questions1.map(item => (
+                           {questions1.map((item,index) => (
                                 <QuestionAnswer
-                                key={item?.question}
+                                key={index}
                                 question={item?.question}
                                 answer={item?.answer}
                                 />
                            ))}
                         </Grid>
                         <Grid item sm={6} xs={12}>
-                           {questions1.map(item => (
+                           {questions1.map((item, index )=> (
                                 <QuestionAnswer
-                                key={item?.question}
+                                key={index}
                                 question={item?.question}
                                 answer={item?.answer}
                                 />

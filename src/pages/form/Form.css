@@ -1,0 +1,38 @@
+.form-hero-left{
+    padding: 8%;
+    padding-left: 16%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.form-hero-right{
+    background-image: url('../../assets/img/hero-img-bg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    text-align: end;
+    position: relative;
+}
+
+.form-hero-right img{
+    width: 85%;
+    margin-right: 13%;
+    margin-top: 180px;
+    margin-bottom: -5px;
+}
+
+.form-sec2-box{
+    padding: 0% 20%;
+}
+
+.form-heading1{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-family: Poppins-Medium;
+    font-size: 22px;
+    line-height: 30px;
+    color: #383838;
+}
+
