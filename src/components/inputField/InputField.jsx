@@ -23,7 +23,7 @@ export default function InputField({ icon, placeholder, isPassword, onChange, va
             <div className="input1-label">{label}</div>
             {multipleLine ?
                 <textarea className='textAreaComp' rows="4" ></textarea>
-                : <div className='inputBox' >
+                : <div className='inputBox' style={style} >
                     <div className='leftBox' >
                         <input className='input' onChange={onChange} value={value} placeholder={placeholder} type={inputType ?? type}
                         />

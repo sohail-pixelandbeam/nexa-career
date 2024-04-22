@@ -2,13 +2,15 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid #C0C0C0;
+    /* border: 1px solid #C0C0C0; */
     background-color: white;
     width: 100%;
     height: 60px;
-    padding: 0px 20px;
+    padding-left: 20px;
     border-radius: 5px;
     margin: 8px 0px;
+    overflow: hidden;
+    z-index: 20;
 }
 
 .leftBox {
@@ -26,7 +28,8 @@ input {
     width: 100%;
     font-size: 16px;
     font-family: Poppins-Regular;
-    color:black
+    color:black;
+    z-index: 5;
 
 }
 
@@ -42,6 +45,20 @@ input::placeholder {
     color: gray;
     font-family: Poppins, 'Courier New', Courier, monospace;
     font-size: 14px;
+}
+
+.rightBox1{
+    background-color: #FFA63D;
+    height: 100%;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.rightBox1 img{
+    width: 20px;
 }
 
 

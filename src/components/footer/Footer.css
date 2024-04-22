@@ -1,12 +1,26 @@
 .footer-main{
     background-color:#F9F9F9;
+    position: relative;
+
     /* background-color: red; */
 }
-/* 
-.footer-upper{
-    display: flex;
-    align-items: stretch;
-} */
+
+.footer-pattern1{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 25%;
+    z-index:-1;
+}
+
+.footer-pattern2{
+    position: absolute;
+    right: 0px;
+    top: 200px;
+    width: 25%;
+    z-index: -1;
+}
+
 
 .footer-upper-left{
     display: flex;
@@ -58,6 +72,11 @@
     font-family: SpaceGrotest-Regular;
 }
 
+.footer-right-padding{
+    padding-right: 15%;
+
+}
+
 .footer-social-icons{
     display: flex;
     gap: 20px;
@@ -91,3 +110,46 @@
     width: 20px;
     transition: 0.5s ease-in-out;
 } */
+
+.footer-heading{
+    font-family: Space-Grotesk-Bold;
+    font-size: 22px;
+    line-height: 36px;
+    color: white;
+    margin-bottom: 25px;
+}
+
+.footer-link-text{
+    color:white;
+    font-family: SpaceGrotesk-Regular;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.footer-item{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.footer-lowest{
+    background:black;
+    height: 80px;
+    border-top: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-lowest-links{
+    display: flex;
+    gap:20px;
+}
+
+.footerLink-hover{
+    cursor: pointer;
+}

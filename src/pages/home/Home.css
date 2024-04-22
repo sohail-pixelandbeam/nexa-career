@@ -91,10 +91,27 @@
 }
 
 .home-sec2-card{
+    width: 100%;
     padding: 15px;
+    transition: 0.3s ease-in-out;
+    border-radius: 10px;
+    min-height: 230px;
+
 }
+
+.home-sec2-card:hover{
+    box-shadow: 1px 10px 15px rgba(0,0,0,0.1);
+}
+
+
 .home-sec2-icon{
     width: 80px;
+}
+
+
+.home-sec2-card:hover img{
+    width: 90px;
+    transition: 0.3s ease;
 }
 
 /* section 3  */
@@ -161,6 +178,10 @@
     padding-right: 25%;
 }
 
+.home-sec4-tab:hover{
+    background-color: #FFA63D;
+}
+
 .home-sec4-tab img{
     width: 100px;
 }
@@ -224,6 +245,11 @@
     padding-right: 10%;
 }
 .home-sec5-right img{
+    width: 95%;
+}
+
+.home-sec5-right img:hover{
+    transition: 0.3s ease;
     width: 100%;
 }
 
@@ -236,6 +262,36 @@
     background-size: cover;
     padding-bottom: 8%;
 }
+
+/* section 7  */
+
+.home-sec7-bar{
+    width: 100px;
+    border-top: 2px solid #FFA63D;
+    margin: 25px auto;
+}
+
+.home-sec7-questionsBox{
+    margin: 80px 0px;
+}
+
+.home-sec7-btnsBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 150px;
+    position: relative;
+
+}
+
+.home-arrowImg{
+    position: absolute;
+    width: 200px;
+    top: 80px;
+    left: 60%;
+}
+
 
 
 @media screen and (max-width: 1500px) {

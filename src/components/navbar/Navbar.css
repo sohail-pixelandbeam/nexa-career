@@ -2,16 +2,41 @@
     position: fixed;
     width: 100%;
     z-index: 20000;
+    border-bottom: 1px solid lightgray;
 }
 
 .navBar-note {
     background: #101010;
     color: white;
-    font-size: 13px;
-    padding-top: 7px;
-    height: 35px;
-    text-align: center;
+    font-size: 18px;
+    padding: 0px 8%;
+    height: 50px;
     transition: 0.5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBar-note-left{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navBar-note-left-item{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navBar-note-right{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navBar-note-right img{
+    cursor: pointer;
 }
 
 .navBar {
@@ -46,18 +71,24 @@
 
 
 .link-nb {
-    color: #252525;
+    color: black;
     cursor: pointer;
     display: flex;
     align-items: center;
     padding: 3px 5px;
     border-radius: 5px;
-    border: 1px solid transparent;
     margin-right: 20px;
+    font-family: SpaceGrotest-Regular;
+    font-size: 18px;
+}
+
+.active{
+    color: #FFA63D;
+    font-family: Space-Grotest-Bold;
 }
 
 .link-nb:hover {
-    border: 1px solid lightgray;
+    color: #FFA63D;
     transition: 0.5s ease;
 }
 
@@ -109,6 +140,10 @@
 .navBtn:hover {
     opacity: 0.9;
     transition: 0.5s ease;
+}
+
+.nav-getStarted-btn{
+    display: block;
 }
 
 
@@ -214,9 +249,13 @@
 }
 
 @media screen and (max-width:699px) {
-    .navBar-note {
+    /* .navBar-note {
         height: 45px;
         padding-left: 20px;
         padding-right: 20px;
+    } */
+
+    .nav-getStarted-btn{
+        display: none;
     }
 }

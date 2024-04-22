@@ -5,12 +5,19 @@ import CloseIcon from '@mui/icons-material/Close';
 import logo from '../../assets/img/logo.png';
 import Btn from "../btn/Btn";
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import message from '../../assets/img/message.png';
+import location from '../../assets/img/location.png';
+import facebook from '../../assets/img/facebook.png';
+import linkedin from '../../assets/img/linkedin.png';
+import instagram from '../../assets/img/instagram.png';
+import twitter from '../../assets/img/twitter.png';
+
 import './Navbar.css';
 
 export default function NavBar({ active, hideModal }) {
     let [menu, setMenu] = useState(false);
     let [activeMenu, setActiveMenu] = useState('navLinks');
-    let [activeLink, setActiveLink] = useState('')
+    let [activeLink, setActiveLink] = useState('Home')
     let [showNote, setShowNote] = useState(true);
 
     let [isMobile, setIsMobile] = useState(false);
@@ -45,10 +52,6 @@ export default function NavBar({ active, hideModal }) {
         (menu === false) ? setActiveMenu('navLinks') : setActiveMenu("navLinks active")
     }, [menu])
 
-    useEffect(() => {
-        setActiveLink('')
-    }, [hideModal])
-
     const onCursorEnter = (val) => {
         if (val) setActiveLink(val);
         setMenu(false);
@@ -59,16 +62,26 @@ export default function NavBar({ active, hideModal }) {
 
     return (
         <div className="navBar-Parent">
-            <div className="navBar-note"
-                style={{
-                    display: showNote ? 'block' : 'none',
-                    // opacity: (activeLink === '') ? 1 : 0.3,
-                }}
-            >
-            
-            <div>
+            <div style={{ display: showNote ? 'block' : 'none' }} >
+                <div className="navBar-note">
+                    <div className="navBar-note-left">
+                        <div className="navBar-note-left-item">
+                            <img src={message} alt="img" width={16} />
+                            <div>info@example.com</div>
+                        </div>
+                        <div className="navBar-note-left-item">
+                            <img src={location} alt="img" width={12} />
+                            <div>info@example.com</div>
+                        </div>
+                    </div>
+                    <div className="navBar-note-right">
+                        <img src={facebook} alt="icon" width={10} />
+                        <img src={instagram} alt="icon" width={14} />
+                        <img src={twitter} alt="icon" width={15} />
+                        <img src={linkedin} alt="icon" width={14} />
+                    </div>
 
-            </div>
+                </div>
             </div>
             <div className="navBar">
                 <div className="icon">
@@ -96,27 +109,27 @@ export default function NavBar({ active, hideModal }) {
                             >AI Bot
                             </div>
                             <div
-                                className={activeLink === 'AI Bot' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('AI Bot')}
+                                className={activeLink === 'Form' ? 'link-nb active' : 'link-nb'}
+                                onClick={() => onCursorEnter('Form')}
                             >Form
                             </div>
                             <div
-                                className={activeLink === 'AI Bot' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('AI Bot')}
+                                className={activeLink === 'Career' ? 'link-nb active' : 'link-nb'}
+                                onClick={() => onCursorEnter('Career')}
                             >Career
                             </div>
                             <div
-                                className={activeLink === 'AI Bot' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('AI Bot')}
+                                className={activeLink === 'Contact Us' ? 'link-nb active' : 'link-nb'}
+                                onClick={() => onCursorEnter('Contact Us')}
                             >Contact Us
                             </div>
 
                         </div>
                     </div>
                 </div>
-                <div>
+                <div className="nav-getStarted-btn">
                     <Btn
-                         label="Get Started "
+                        label="Get Started "
                         onClick={() => {
                             navigate('/')
                         }}
