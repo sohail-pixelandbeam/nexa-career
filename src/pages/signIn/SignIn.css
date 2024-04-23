@@ -1,0 +1,9 @@
+.SignInBox{
+    background-color: white;
+    margin: 0px 25%;
+    margin-top: -250px;
+    text-align: center;
+    box-shadow: 1px 10px 15px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 4% 3%;
+}

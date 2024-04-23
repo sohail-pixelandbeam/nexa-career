@@ -384,7 +384,7 @@ export default function Home() {
                            ))}
                         </Grid>
                         <Grid item sm={6} xs={12}>
-                           {questions1.map((item, index )=> (
+                           {questions2.map((item, index )=> (
                                 <QuestionAnswer
                                 key={index}
                                 question={item?.question}

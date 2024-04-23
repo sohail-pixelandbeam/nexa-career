@@ -3,7 +3,7 @@ import './SelectBox.css'
 
 export default function SelectBox({ label, options, onSelect, selected, placeholder }) {
 
-    let [val, setVal] = useState('');
+    let [val, setVal] = useState("");
 
 
     const onChange = (e) => {
@@ -18,13 +18,13 @@ export default function SelectBox({ label, options, onSelect, selected, placehol
         if (selected) {
             setVal(selected)
         }
-
     }, [])
 
+    console.log(val, )
     return (
         <div className='selectBox'>
-            <div className="input1-label">{label}</div>
-            <select id="select" className='inputBox1' value={val === '' ? placeholder : val} onChange={onChange}>
+           {val === "" && <div className="select1-label">{placeholder}</div>}
+            <select id="select" className='inputBox1' value={val} onChange={onChange}>
                 <option key='' value=''> </option>
                 {options.map((option) => (
                     <option key={option} value={option}>

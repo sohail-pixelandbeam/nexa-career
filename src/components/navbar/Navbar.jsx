@@ -136,7 +136,7 @@ export default function NavBar({ active, hideModal }) {
                     <Btn
                         label="Get Started "
                         onClick={() => {
-                            navigate('/')
+                            onCursorEnter('SignIn')
                         }}
                     />
                 </div>

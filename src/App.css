@@ -14,6 +14,12 @@ body{
   color: black;
 }
 
+.heading2{
+  font-size: 32px;
+  font-family: Poppins-SemiBold;
+  color: black;
+}
+
 .heading1 span{
   color: #FFA63D;
 }
