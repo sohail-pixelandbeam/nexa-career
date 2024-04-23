@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SignIn.css';
 import NavBar from '../../components/navbar/Navbar';
 import { Grid } from '@mui/material';
@@ -14,7 +14,9 @@ import { BorderBottom } from '@mui/icons-material';
 
 export default function SignIn() {
 
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
     return (
         <div>

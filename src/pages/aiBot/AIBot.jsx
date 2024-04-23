@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './AIBot.css';
 import NavBar from '../../components/navbar/Navbar';
 import { Grid } from '@mui/material';
@@ -13,6 +13,10 @@ import arrow1 from '../../assets/img/arrow1.png';
 
 
 export default function AIBot() {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
 
     const questions1 = [
@@ -60,6 +64,8 @@ export default function AIBot() {
             answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
         },
     ]
+
+
 
 
     return (

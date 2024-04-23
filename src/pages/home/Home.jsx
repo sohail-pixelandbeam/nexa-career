@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Home.css';
 import NavBar from '../../components/navbar/Navbar';
 import { Grid } from '@mui/material';
@@ -205,6 +205,10 @@ export default function Home() {
             answer:"Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
         },
     ]
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
 
    
     return (

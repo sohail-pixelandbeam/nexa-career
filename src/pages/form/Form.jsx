@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Form.css';
 import NavBar from '../../components/navbar/Navbar';
 import { Grid } from '@mui/material';
@@ -12,7 +12,9 @@ import InputField from '../../components/inputField/InputField';
 import SelectBox from '../../components/selectBox/SelectBox';
 
 export default function Form() {
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [])
     return (
         <div>
             <NavBar />
