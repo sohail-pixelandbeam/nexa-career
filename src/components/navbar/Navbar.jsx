@@ -97,7 +97,7 @@ export default function NavBar({ active }) {
                 </div>
                 <div className="nb-links-box-dummy">
                     <div className={activeMenu}>
-                        <div className="navLinks-box">
+                        {active !== 'SignUp' && <div className="navLinks-box">
                             {isMobile && <div
                                 className="link-nb2"
                                 onClick={() => setMenu(false)}
@@ -129,14 +129,14 @@ export default function NavBar({ active }) {
                             >Contact Us
                             </div>
 
-                        </div>
+                        </div>}
                     </div>
                 </div>
                 <div className="nav-getStarted-btn">
                     <Btn
                         label="Get Started "
                         onClick={() => {
-                            handleNavigation('SignIn', '/SignIn');
+                            handleNavigation('SignUp', '/SignUp');
                         }}
                     />
                 </div>

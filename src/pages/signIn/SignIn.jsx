@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './SignIn.css';
 import NavBar from '../../components/navbar/Navbar';
-import { Grid } from '@mui/material';
 import Btn from '../../components/btn/Btn';
-import homeImg2 from '../../assets/img/homeImg2.png';
-import arrowImg from '../../assets/img/arrowImg.png';
 import Footer from '../../components/footer/Footer';
-import QuestionAnswer from '../../components/questionAnswer/QuestionAnswer';
-import formHeroImg from '../../assets/img/formHeroImg.png';
 import InputField from '../../components/inputField/InputField';
-import SelectBox from '../../components/selectBox/SelectBox';
-import { BorderBottom } from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function SignIn() {
+    const navigate = useNavigate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -41,8 +37,9 @@ export default function SignIn() {
                 />
                 <div className="signIn-bottom-texts">
                     <div className="signIn-link-text">Forgot Password?</div>
+                    
                     <div className="signIn-bottom-text">New to Nexa Career?
-                        <div className="signIn-link-text">Create Account</div>
+                        <div className="signIn-link-text" onClick={() => navigate('/signUp')}>Create Account</div>
                     </div>
                 </div>
             </div>

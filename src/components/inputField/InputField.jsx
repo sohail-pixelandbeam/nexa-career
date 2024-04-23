@@ -4,7 +4,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Icon } from '@mui/material';
 
-export default function InputField({ icon, placeholder, isPassword, onChange, value, inputType, label, multipleLine, style }) {
+export default function InputField({ icon, placeholder, isPassword, onChange, value, inputType, label, multipleLine, style, required }) {
 
     let [type, setType] = useState('text')
 
@@ -21,7 +21,7 @@ export default function InputField({ icon, placeholder, isPassword, onChange, va
 
     return (
         <div style={{ width: '100%' }}>
-            <div className="input1-label">{label}</div>
+            <div className="input1-label">{label}{required && <font className='required-style'>*</font>}</div>
             {multipleLine ?
                 <textarea className='textAreaComp' rows="4" ></textarea>
                 : <div className='inputBox' style={style} >

@@ -1,0 +1,51 @@
+.signup-main{
+    padding: 12% 8%;
+}
+
+.steper-mainBox{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.steper-heading{
+    color: #0A2C3F;
+    font-size: 14px;
+    margin-bottom: 10px;
+    user-select: none;
+}
+
+.steper-step{
+    flex:1;
+    border-bottom: 3px solid #CECECE;
+    border-radius: 5px;
+}
+
+.steper-step.active{
+    border-bottom: 3px solid #FFA63D;
+}
+
+.step-content-box{
+    padding-top: 50px;
+}
+
+.inputBox-margintT{
+    margin-top: 20px;
+}
+
+/* sign up right  */
+
+.signUp-right{
+    margin: 50px 0px;
+}
+
+.signUp-right>img{
+    width: 100%;
+}
+
+.signUp-right div{
+    text-align: center;
+    margin: 3%;
+    margin-top: 8%;
+    font-family: Poppins-SemiBold;
+}

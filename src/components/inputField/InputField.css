@@ -69,6 +69,11 @@ input::placeholder {
     width: 20px;
 }
 
+.required-style{
+    color: #DC2626;
+    padding-left: 3px;
+}
+
 
 @media (max-width: 699px) {
     .inputBox {
