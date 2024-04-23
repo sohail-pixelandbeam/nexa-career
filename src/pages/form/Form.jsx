@@ -13,54 +13,6 @@ import SelectBox from '../../components/selectBox/SelectBox';
 
 export default function Form() {
 
- 
-    const questions1 = [
-        {
-            question: "What is Nexa Career and its mission?",
-            answer: " Our mission is to guide students transitioning from high school to bachelor's degrees and graduates seeking job opportunities, facilitating well-informed and strategic career decisions."
-        },
-        {
-            question: "Who can benefit from Nexa Career's services?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "How does Nexa Career provide career counseling?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "Are the counseling sessions confidential?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "How does Nexa Career provide career counseling?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-    ]
-
-    const questions2 = [
-        {
-            question: "How can I schedule a counseling session with Nexa Career?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "What types of resources does Nexa Career offer?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "Is there a fee for Nexa Career's services?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "How does Nexa Career provide career counseling?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-        {
-            question: "How does Nexa Career provide career counseling?",
-            answer: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae at, vero possimus doloribus ullam animi accusamus illum voluptatem repellat saepe"
-        },
-    ]
-
-
     return (
         <div>
             <NavBar />
@@ -153,44 +105,6 @@ export default function Form() {
                         </div>
                     </Grid>
                 </Grid>
-            </section>
-            {/* section 7  */}
-            <section className="padding">
-                <div className="home-sec7-bar" />
-                <div className="heading1 heading1-home text-center" >Revolutionizing For <span>Career</span> Future</div>
-                <div className="subHeading1 text-center">Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning. </div>
-                <div className='home-sec7-questionsBox'>
-                    <Grid container spacing={5}>
-                        <Grid item sm={6} xs={12}>
-                            {questions1.map(item => (
-                                <QuestionAnswer
-                                    key={item?.question}
-                                    question={item?.question}
-                                    answer={item?.answer}
-                                />
-                            ))}
-                        </Grid>
-                        <Grid item sm={6} xs={12}>
-                            {questions2.map(item => (
-                                <QuestionAnswer
-                                    key={item?.question}
-                                    question={item?.question}
-                                    answer={item?.answer}
-                                />
-                            ))}
-                        </Grid>
-                    </Grid>
-                </div>
-                <div className='home-sec7-btnsBox'>
-                    <Btn
-                        label='Contact Us'
-                    />
-                    <Btn
-                        label='Explore Jobs'
-                        style={{ background: '#FFA63D' }}
-                    />
-                    <img src={arrowImg} className='home-arrowImg' alt="img" />
-                </div>
             </section>
             {/* footer  */}
             <Footer />

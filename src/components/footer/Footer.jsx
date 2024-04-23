@@ -88,7 +88,7 @@ export default function Footer() {
                             {
                                 data1.map((item, index) => {
                                     return (
-                                        <div className="footer-social-icon">
+                                        <div key={index} className="footer-social-icon">
                                             <img src={item.img} alt="icon" key={index}
                                             style={{width: item.name ==='instagram' ? '22px':'14px'}}
                                             />

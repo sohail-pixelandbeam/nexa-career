@@ -14,7 +14,7 @@ import twitter from '../../assets/img/twitter.png';
 
 import './Navbar.css';
 
-export default function NavBar({ active, hideModal }) {
+export default function NavBar({ active }) {
     let [menu, setMenu] = useState(false);
     let [activeMenu, setActiveMenu] = useState('navLinks');
     let [activeLink, setActiveLink] = useState('Home')
@@ -52,10 +52,10 @@ export default function NavBar({ active, hideModal }) {
         (menu === false) ? setActiveMenu('navLinks') : setActiveMenu("navLinks active")
     }, [menu])
 
-    const onCursorEnter = (val) => {
-        if (val) setActiveLink(val);
-        navigate(`/${val}`)
+    const handleNavigation = (name, path) => {
         setMenu(false);
+        setActiveLink(name);
+        navigate(path)
     }
 
 
@@ -65,9 +65,9 @@ export default function NavBar({ active, hideModal }) {
     return (
         <div className="navBar-Parent">
             <div
-            style={{display:'none'}}
+                style={{ display: 'none' }}
             // style={{ display: showNote ? 'block' : 'none' }}
-             >
+            >
                 <div className="navBar-note">
                     <div className="navBar-note-left">
                         <div className="navBar-note-left-item">
@@ -105,27 +105,27 @@ export default function NavBar({ active, hideModal }) {
                             </div>}
                             <div
                                 className={activeLink === 'Home' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('')}
+                                onClick={() => handleNavigation('Home', '/')}
                             >Home
                             </div>
                             <div
                                 className={activeLink === 'AI Bot' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('')}
+                                onClick={() => handleNavigation('AI Bot', '/AIBot')}
                             >AI Bot
                             </div>
                             <div
                                 className={activeLink === 'Form' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('Form')}
+                                onClick={() => handleNavigation('Form', '/Form')}
                             >Form
                             </div>
                             <div
                                 className={activeLink === 'Career' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('')}
+                                onClick={() => handleNavigation('Career', '/')}
                             >Career
                             </div>
                             <div
                                 className={activeLink === 'Contact Us' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => onCursorEnter('')}
+                                onClick={() => handleNavigation('Contact Us', '/')}
                             >Contact Us
                             </div>
 
@@ -136,7 +136,7 @@ export default function NavBar({ active, hideModal }) {
                     <Btn
                         label="Get Started "
                         onClick={() => {
-                            onCursorEnter('SignIn')
+                            handleNavigation('SignIn', '/SignIn');
                         }}
                     />
                 </div>

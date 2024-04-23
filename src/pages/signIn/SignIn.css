@@ -7,3 +7,24 @@
     border-radius: 4px;
     padding: 4% 3%;
 }
+
+.signIn-bottom-texts{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.signIn-link-text{
+    color: #FFA63D;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.signIn-bottom-text{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #888888;
+}

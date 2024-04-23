@@ -1,0 +1,73 @@
+.aiBot-hero{
+    background-image: url('../../assets/img/AIBotBg.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    /* text-align: end;  */
+    min-height: 500px;
+    padding: 5% 8%;
+    padding-top: 150px;
+}
+
+.aiBot-heading2{
+    color: #05092B;
+    font-size: 45px;
+    line-height: 68px;
+}
+
+.aiBot-sec2-padding{
+    padding: 7% 10%;
+    position: relative;
+}
+
+.aiBot-arrow1{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 8%;
+}
+
+.aiBot-heading1{
+    font-size:80px;
+    color: white;
+    font-family: Space-Grotest-Bold;
+    text-transform: capitalize;
+}
+
+.aiBot-heading1 span{
+    color: #FFA63D;
+    font-family: Space-Grotest-Bold;
+
+}
+
+.aiBot-subHeading{
+    font-size: 23px;
+    line-height: 36px;
+    color: white;
+    margin: 50px 15%;
+    text-align: center;
+}
+
+.aiBot-hero-btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.aiBot-subHeading1{
+    color: #1E1D1D;
+    font-size: 18px;
+    margin: 20px 0px;
+    padding-right: 20%;
+    font-style: SpaceGrotesk-Regular;  
+}
+
+/* section 3  */
+.aiBot-sec3{
+    background-color: #F9F9F9;
+}
+
+.aiBotImg2-style{
+    margin-bottom: 80px;
+}

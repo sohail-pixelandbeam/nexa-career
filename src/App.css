@@ -2,6 +2,7 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+  font-family: Poppins-Regular;
 }
 
 body{
@@ -22,6 +23,8 @@ body{
 
 .heading1 span{
   color: #FFA63D;
+  font-family: Poppins-SemiBold;
+
 }
 
 .subHeading1{
