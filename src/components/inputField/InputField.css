@@ -15,7 +15,7 @@
 
 .leftBox {
     display: flex;
-    gap: 10px;
+    gap: 5px;
     align-items: center;
     flex: 1;
 }
@@ -81,7 +81,7 @@ input::placeholder {
     }
 
 
-    input {
+    /* input {
         width: 85%;
-    }
+    } */
 }
