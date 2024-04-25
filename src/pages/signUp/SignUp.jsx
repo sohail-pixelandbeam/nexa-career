@@ -56,6 +56,10 @@ export default function SignUp() {
         setActiveStep(3);
     }
 
+    const submitForm = () => {
+        navigate('/')
+    }
+
     return (
         <div>
             <NavBar active='SignUp' />
@@ -185,7 +189,7 @@ export default function SignUp() {
                             </div>
                             <Btn
                                 label='Continue'
-                                onClick={moveToStep2}
+                                onClick={submitForm}
                                 style={{
                                     width: '100%',
                                     background: '#FFA63D',
@@ -207,7 +211,7 @@ export default function SignUp() {
                 </Grid>
             </section>
             {/* footer  */}
-            <Footer />
+            <Footer hideContact={true} />
 
         </div>
     )

@@ -14,6 +14,10 @@ export default function SignIn() {
         window.scrollTo(0, 0);
     }, [])
 
+    const signInUser = () => {
+        navigate('/')
+    }
+
     return (
         <div>
             <NavBar />
@@ -33,11 +37,13 @@ export default function SignIn() {
                 />
                 <Btn
                     label='Log In'
+                    onClick={signInUser}
                     style={{ width: '100%', marginTop: '50px', background: '#FFA63D' }}
+
                 />
                 <div className="signIn-bottom-texts">
                     <div className="signIn-link-text">Forgot Password?</div>
-                    
+
                     <div className="signIn-bottom-text">New to Nexa Career?
                         <div className="signIn-link-text" onClick={() => navigate('/signUp')}>Create Account</div>
                     </div>
