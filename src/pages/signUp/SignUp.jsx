@@ -20,6 +20,29 @@ export default function SignUp() {
     const navigate = useNavigate();
     const isMobile = useIsMobile();
     const steps = [1, 2, 3];
+    const pakistan_cities = [
+        "Karachi",
+        "Lahore",
+        "Islamabad",
+        "Rawalpindi",
+        "Faisalabad",
+        "Multan",
+        "Gujranwala",
+        "Quetta",
+        "Peshawar",
+        "Sialkot",
+        "Hyderabad",
+        "Gujrat",
+        "Bahawalpur",
+        "Sargodha",
+        "Sukkur",
+        "Larkana",
+        "Sheikhupura",
+        "Jhang",
+        "Rahim Yar Khan",
+        "Mardan"
+    ]
+
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -134,14 +157,30 @@ export default function SignUp() {
                         </div>}
                         {/* 3rd step  */}
                         {activeStep === 3 && <div className="step-content-box">
-                        <div className="input1-label" style={{ marginTop: '50px' }} >Hi Hadi!</div>
+                            <div className="input1-label" style={{ marginTop: '50px' }} >Hi Hadi!</div>
                             <div className="heading2">Tell Us More About Yourself</div>
                             <div className='inputBox-margintT'>
                                 <SelectBox
-                                label="I am a"
-                                options={['Student', 'Teacher', 'Other']}
-                                placeholder='Select one'
-                                required={true}
+                                    label="I am a"
+                                    options={['Student', 'Teacher', 'Other']}
+                                    placeholder='Select one'
+                                    required={true}
+                                />
+                            </div>
+                            <div className='inputBox-margintT'>
+                                <SelectBox
+                                    label="I am studying in"
+                                    options={['School', 'College', 'University']}
+                                    placeholder='Select one'
+                                    required={true}
+                                />
+                            </div>
+                            <div className='inputBox-margintT'>
+                                <SelectBox
+                                    label="City"
+                                    options={pakistan_cities}
+                                    placeholder='Select one'
+                                    required={true}
                                 />
                             </div>
                             <Btn
