@@ -13,7 +13,6 @@ export default function InputField({ icon, placeholder, isPassword, onChange, va
     }
 
     useEffect(() => {
-        console.log(isPassword)
         if (isPassword) {
             setType('password')
         }
