@@ -5,6 +5,7 @@ import Form from '../pages/form/Form';
 import SignIn from '../pages/signIn/SignIn';
 import AIBot from '../pages/aiBot/AIBot';
 import SignUp from '../pages/signUp/SignUp';
+import ContactUs from '../pages/contactUs/ContactUs';
 
 
 export default function AppRouter() {
@@ -17,6 +18,7 @@ export default function AppRouter() {
                     <Route path='/SignUp' element={<SignUp />}></Route>
                     <Route path='/Form' element={<Form />}></Route>
                     <Route path='/AIBot' element={<AIBot />}></Route>
+                    <Route path='/ContactUs' element={<ContactUs />}></Route>
                 </Routes>
             </BrowserRouter>
         </>

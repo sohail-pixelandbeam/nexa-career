@@ -150,6 +150,9 @@
     display: flex;
     align-items: center;
     gap: 15px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
 }
 
 .nav-account-box img{
@@ -163,6 +166,17 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.signOutBox{
+    position: absolute;
+    right: 0px;
+    top:35px;
+    background-color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.1);
+    user-select: none;
 }
 
 

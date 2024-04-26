@@ -15,13 +15,14 @@ import accountIcon from '../../assets/img/accountIcon.png';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import './Navbar.css';
+import { Link } from "react-scroll";
 
 export default function NavBar({ active }) {
     let [menu, setMenu] = useState(false);
     let [activeMenu, setActiveMenu] = useState('navLinks');
     let [activeLink, setActiveLink] = useState('Home')
     let [showNote, setShowNote] = useState(true);
-
+    let [showSignOut, setShowSignOut] = useState(false);
     let [isMobile, setIsMobile] = useState(false);
     const [userData, setUserData] = useState(null);
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
@@ -35,7 +36,6 @@ export default function NavBar({ active }) {
         }
     }, []);
 
-    console.log(userData, isUserLoggedIn)
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -72,6 +72,13 @@ export default function NavBar({ active }) {
         setActiveLink(name);
         navigate(path)
     }
+
+    const handleLogout = () => {
+        // Remove user data from local storage
+        localStorage.removeItem('userData');
+        // Redirect to the sign-in page
+        navigate('/signin');
+    };
 
 
 
@@ -133,27 +140,35 @@ export default function NavBar({ active }) {
                                 onClick={() => handleNavigation('Form', '/Form')}
                             >Form
                             </div>
-                            <div
+                            {/* <div
                                 className={activeLink === 'Career' ? 'link-nb active' : 'link-nb'}
                                 onClick={() => handleNavigation('Career', '/')}
                             >Career
-                            </div>
+                            </div> */}
                             <div
                                 className={activeLink === 'Contact Us' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => handleNavigation('Contact Us', '/')}
-                            >Contact Us
+                                onClick={() => handleNavigation('Contact Us', '/ContactUs')}
+                            >
+                                    Contact Us                               
                             </div>
 
                         </div>}
                     </div>
                 </div>
                 <div className="nav-getStarted-btn">
-                   {isUserLoggedIn ? <div className="nav-account-box">
+                    {isUserLoggedIn ? <div className="nav-account-box" onMouseEnter={() => setShowSignOut(true)} >
                         <img src={accountIcon} alt="img" />
-                        <div>{userData?.name}
-                        {/* <ArrowDropDownIcon/> */}
+                        <div >{userData?.name}
+                            <ArrowDropDownIcon/>
                         </div>
-                   </div> :  <Btn
+                        {showSignOut && <div className="signOutBox"
+                        onMouseLeave={() => setShowSignOut(false)}
+                        onClick={handleLogout}
+                        >
+                            Sign Out
+                            </div>}
+                        
+                    </div> : <Btn
                         label="Get Started "
                         onClick={() => {
                             handleNavigation('SignUp', '/SignUp');

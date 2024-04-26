@@ -5,7 +5,7 @@ import pattern2 from '../../assets/img/pattern2.png'
 import { Grid, TextField } from '@mui/material'
 import InputField from '../inputField/InputField'
 import logo from '../../assets/img/logo.png'
-import p from '../../assets/img/p.png'
+import x from '../../assets/img/x.png'
 import linkedin from '../../assets/img/linkedin.png'
 import twitter from '../../assets/img/twitter.png'
 import facebook from '../../assets/img/facebook.png'
@@ -14,39 +14,41 @@ import twitter1 from '../../assets/img/twitter1.png'
 import facebook1 from '../../assets/img/facebook1.png'
 import linkedin1 from '../../assets/img/linkedin1.png'
 import instagram1 from '../../assets/img/instagram1.png'
-import instagram from '../../assets/img/instagram2.png'
+import instagram from '../../assets/img/instagram.png'
 import EmailIcon from '@mui/icons-material/Email';
 import PlaceIcon from '@mui/icons-material/Place';
 import forward from '../../assets/img/forward.png'
 import Btn from '../btn/Btn'
+import {  useNavigate } from 'react-router-dom'
 
 
 export default function Footer({ hideContact }) {
+    const navigate = useNavigate()
     const data1 = [
         {
-            img: facebook1,
+            img: facebook,
             name: 'facebook',
         },
         {
-            img: instagram,
-            name: 'instagram',
+            img: x,
+            name: 'twitter',
         },
         {
-            img: linkedin1,
+            img: linkedin,
             name: 'linkedin',
         },
         {
-            img: twitter1,
+            img: twitter,
             name: 'twitter',
         },
     ]
     // const data1 = [facebook, twitter, linkedin, p]
-    const links = ['Jobs', 'AI Bot', 'Contact Us'];
+    const links = [ {name:'AI Bot', to:'/AIBot'}, {name:'Contact Us', to:'/ContactUs'}];
     return (
         <div className='footer-main'>
             {/* <img src={pattern1} alt="pattern" className='footer-pattern1' />
             <img src={pattern2} alt="pattern" className='footer-pattern2' /> */}
-            {hideContact || <div className="footer-upper">
+            {hideContact || <div className="footer-upper" id='contact-us'>
                 <Grid container spacing={0}>
                     <Grid item sm={5.5} xs={12}>
                         <div className="footer-upper-left">
@@ -81,16 +83,16 @@ export default function Footer({ hideContact }) {
             </div>}
             <div className="padding foooter-lower">
                 <Grid container spacing={0}>
-                    <Grid item sm={3.5} xs={12}>
+                    <Grid item sm={5} xs={12}>
                         <img src={logo} alt="logo" className="footer-logo" />
-                        <div className="footer-text footer-right-padding">Lorem ipsu dolor amet, consectetur sell adipis elit phase nibh ellentes</div>
+                        <div className="footer-text footer-right-padding">Comprehensive career guidance solutions for students, parents, educators and schools</div>
                         <div className="footer-social-icons">
                             {
                                 data1.map((item, index) => {
                                     return (
                                         <div key={index} className="footer-social-icon">
                                             <img src={item.img} alt="icon" key={index}
-                                                style={{ width: item.name === 'instagram' ? '22px' : '14px' }}
+                                                // style={{ width: item.name === 'instagram' ? '22px' : '14px' }}
                                             />
                                         </div>
                                     )
@@ -98,49 +100,40 @@ export default function Footer({ hideContact }) {
                             }
                         </div>
                     </Grid>
-                    <Grid item sm={2.75} xs={12} >
+                    <Grid item sm={3} xs={12} >
                         <div className="footer-heading">Useful Links</div>
                         {links && links.length > 0 &&
                             links.map(item => {
                                 return (
-                                    <div className="footer-link-text" key={item}>
+                                    <div className="footer-link-text" key={item?.name}
+                                    onClick={()=>navigate(item?.to)}
+                                    >
                                         <ArrowForwardIosIcon sx={{ color: '#FFA63D', fontSize: '14px' }} />
-                                        {item}
+                                        {item?.name}
                                     </div>
                                 )
                             })
                         }
                     </Grid>
-                    <Grid item sm={3} xs={12} >
+                    <Grid item sm={4} xs={12} >
                         <div className="footer-heading">Contact</div>
                         <div className="footer-item">
                             <div style={{ marginTop: '5px' }}>
                                 <EmailIcon sx={{ color: '#FFA63D', fontSize: '20px' }} />
                             </div>
-                            <div className="footer-text footer-right-padding ">lorem ispum@example.com</div>
+                            <div className="footer-text footer-right-padding ">saad.teckverticks@gmail.com</div>
                         </div>
                         <div className="footer-item">
                             <div style={{ marginTop: '5px' }}>
                                 <PlaceIcon sx={{ color: '#FFA63D', fontSize: '20px' }} />
                             </div>
-                            <div className="footer-text footer-right-padding">Lorem alphonso davies,Las Vegas 62639</div>
-                        </div>
-                    </Grid>
-                    <Grid item sm={2.75} xs={12} >
-                        <div className="footer-heading">Contact</div>
-                        <div className="footer-text">Lorem Ipsum is simp the a dumiomy is text Lorem Ipsum is simply</div>
-                        <div style={{ paddingTop: '15px' }}>
-                            <InputField
-                                placeholder='Your e-mail'
-                                // style={{background:"#484848"}}
-                                icon={forward}
-                            />
+                            <div className="footer-text footer-right-padding">Bahria University, National Stadium Road, Karachi</div>
                         </div>
                     </Grid>
                 </Grid>
             </div>
             <div className="footer-lowest padding-x">
-                <div className="footer-text">© Nex-a-Career  2023 | All Rights Reserved</div>
+                <div className="footer-text">© Nex-a-Career  2024 | All Rights Reserved</div>
                 <div className='footer-lowest-links'>
                     <div className="footer-text footerLink-hover">Terms & Conditions</div>
                     <div className="footer-text footerLink-hover">Privacy Policy</div>

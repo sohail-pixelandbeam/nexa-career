@@ -240,6 +240,7 @@ export default function SignUp() {
                         {/* 2nd step  */}
                         {activeStep === 2 && <div className="step-content-box">
                             <div className="heading2" style={{ marginTop: '5%' }}>OTP Registration</div>
+                            <div className="input1-label">Your OTP has been sent to <b> {userObj?.email}</b>. Please check your inbox and enter the OTP. Remember, it's a one-time code.</div>
                             <div className="input1-label" style={{ marginTop: '50px' }} >Enter your OTP <font className='required-style'>*</font></div>
                             {!isMobile && <OTPInput
                                 value={OTP}
