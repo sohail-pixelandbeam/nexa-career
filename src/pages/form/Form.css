@@ -36,3 +36,42 @@
     color: #383838;
 }
 
+.form-sec2-interest-input{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.form-sec2-interests-box{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+
+.form-sec2-interests-box div{
+    background-color: lightgray;
+    padding: 12px;
+    border-radius: 5px;
+    font-family: Poppins-Bold;
+    font-size: 16px;
+    line-height: 18px;
+    color: black;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.form-cursor{
+    cursor: pointer;
+}
+
+.form-cursor:hover{
+    color: red;
+    transition: 0.5s ease;
+}
+

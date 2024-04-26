@@ -8,7 +8,6 @@ export default function SelectBox({ label, options, onSelect, selected, placehol
 
     const onChange = (e) => {
         setVal(e.target.value)
-        console.log(e.target.value)
         if (onSelect) {
             onSelect(e.target.value);
         }
@@ -20,7 +19,6 @@ export default function SelectBox({ label, options, onSelect, selected, placehol
         }
     }, [])
 
-    console.log(val, )
     return (
         <div style={{ width: '100%' }}>
 <div className="input1-label">{label}{required && <font className='required-style'>*</font>}</div>

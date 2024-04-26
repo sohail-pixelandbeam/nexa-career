@@ -46,7 +46,11 @@ export default function Footer({ hideContact }) {
         },
     ]
     // const data1 = [facebook, twitter, linkedin, p]
-    const links = [ {name:'AI Bot', to:'/AIBot'}, {name:'Contact Us', to:'/ContactUs'}];
+    const links = [ 
+        {name:'AI Bot', to:'/AIBot'}, 
+        {name:'Contact Us', to:'/ContactUs'},
+        {name:'Form', to:'/Form'},
+    ];
 
     let [isLoading, setIsLoading] = useState(false);
     let [openSnack, setOpenSnack] = useState(false);
@@ -173,10 +177,12 @@ export default function Footer({ hideContact }) {
                             {
                                 data1.map((item, index) => {
                                     return (
-                                        <div key={index} className="footer-social-icon">
+                                        <div key={index} className="footer-social-icon-outer">
+                                            <div className="footer-social-icon">
                                             <img src={item.img} alt="icon" key={index}
                                                 // style={{ width: item.name === 'instagram' ? '22px' : '14px' }}
                                             />
+                                            </div>
                                         </div>
                                     )
                                 })

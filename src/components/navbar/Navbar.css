@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     z-index: 20000;
-    /* border-bottom: 1px solid lightgray; */
+    border-bottom: 1px solid lightgray;
 }
 
 .navBar-note {
