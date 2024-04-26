@@ -16,8 +16,9 @@ import Snack from '../../components/snack/Snack';
 import Loader from '../../components/loader/Loader';
 // import emailjs from "@emailjs/browser";
 import { db } from '../../config/FirebaseConfig';
-import { addDoc, collection } from 'firebase/firestore/lite';
+import { Query, addDoc, collection, getDocs, where } from 'firebase/firestore/lite';
 import { getCurrentDate, generateOTP } from '../../utils';
+import { query } from 'firebase/firestore';
 
 export default function SignUp() {
 
@@ -80,20 +81,35 @@ export default function SignUp() {
         setIsLoading(true);
         const { name, email, phoneNumber, password, OTP, joiningDate } = userObj;
         if (password && name && email && phoneNumber) {
-            // sendingOTP to user
-            const data = {
-                service_id: 'nexa-career',
-                template_id: 'template_1vnzs48',
-                user_id: 'oYKRBmPYmAeLWvmHP',
-                template_params: {
-                    name,
-                    email,
-                    OTP,
-                    'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
-                }
-            };
-
             try {
+                // Get all documents from the users collection
+                const usersCollection = collection(db, 'users');
+                const querySnapshot = await getDocs(usersCollection);
+    
+                // Check if email exists in any of the documents
+                const emailExists = querySnapshot.docs.some(doc => doc.data().email === email);
+    
+                if (emailExists) {
+                    setSnackMsg("Email already exists");
+                    setSeverity("error");
+                    setOpenSnack(true);
+                    setIsLoading(false);
+                    return; // Terminate the function
+                }
+    
+                // If email doesn't exist, proceed with sending OTP
+                const data = {
+                    service_id: 'nexa-career',
+                    template_id: 'template_1vnzs48',
+                    user_id: 'oYKRBmPYmAeLWvmHP',
+                    template_params: {
+                        name,
+                        email,
+                        OTP,
+                        'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...'
+                    }
+                };
+    
                 const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
                     method: 'POST',
                     headers: {
@@ -101,7 +117,7 @@ export default function SignUp() {
                     },
                     body: JSON.stringify(data)
                 });
-
+    
                 if (response.ok) {
                     setSnackMsg("OTP Sent Successfully");
                     setSeverity("success");
@@ -110,15 +126,15 @@ export default function SignUp() {
                     setActiveStep(2);
                 } else {
                     throw new Error('Failed to send email');
-                    setIsLoading(false);
                 }
             } catch (error) {
-                console.error('Error sending email:', error);
-                alert('Oops... ' + JSON.stringify(error));
+                console.error('Error moving to step 2:', error);
+                setSnackMsg(error.message || 'Error moving to step 2');
+                setSeverity("error");
+                setOpenSnack(true);
                 setIsLoading(false);
             }
-        }
-        else {
+        } else {
             setOpenSnack(true);
             setSnackMsg("Required Fields are missing.");
             setIsLoading(false);
@@ -126,7 +142,7 @@ export default function SignUp() {
     }
 
     const verifyOTP = async () => {
-        setIsLoading(true);
+          setIsLoading(true);
         if (userObj?.OTP === OTP) {
 
             try {
@@ -152,7 +168,6 @@ export default function SignUp() {
             setOTP('');
         }
     }
-
 
     return (
         <div>

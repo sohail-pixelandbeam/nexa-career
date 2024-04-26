@@ -11,6 +11,8 @@ import facebook from '../../assets/img/facebook.png';
 import linkedin from '../../assets/img/linkedin.png';
 import instagram from '../../assets/img/instagram.png';
 import twitter from '../../assets/img/twitter.png';
+import accountIcon from '../../assets/img/accountIcon.png';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 import './Navbar.css';
 
@@ -21,6 +23,19 @@ export default function NavBar({ active }) {
     let [showNote, setShowNote] = useState(true);
 
     let [isMobile, setIsMobile] = useState(false);
+    const [userData, setUserData] = useState(null);
+    const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
+
+    useEffect(() => {
+        // Retrieve user data from local storage
+        const storedUserData = localStorage.getItem('userData');
+        if (storedUserData) {
+            setUserData(JSON.parse(storedUserData));
+            setIsUserLoggedIn(true);
+        }
+    }, []);
+
+    console.log(userData, isUserLoggedIn)
 
     useEffect(() => {
         const checkIfMobile = () => {
@@ -133,12 +148,18 @@ export default function NavBar({ active }) {
                     </div>
                 </div>
                 <div className="nav-getStarted-btn">
-                    <Btn
+                   {isUserLoggedIn ? <div className="nav-account-box">
+                        <img src={accountIcon} alt="img" />
+                        <div>{userData?.name}
+                        {/* <ArrowDropDownIcon/> */}
+                        </div>
+                   </div> :  <Btn
                         label="Get Started "
                         onClick={() => {
                             handleNavigation('SignUp', '/SignUp');
                         }}
-                    />
+                    />}
+
                 </div>
             </div>
         </div >
