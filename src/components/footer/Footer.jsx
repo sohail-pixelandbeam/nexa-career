@@ -48,8 +48,9 @@ export default function Footer({ hideContact }) {
     // const data1 = [facebook, twitter, linkedin, p]
     const links = [ 
         {name:'AI Bot', to:'/AIBot'}, 
-        {name:'Contact Us', to:'/ContactUs'},
         {name:'Form', to:'/Form'},
+        {name:'Resume Builder', to:'/'},
+
     ];
 
     let [isLoading, setIsLoading] = useState(false);

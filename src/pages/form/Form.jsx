@@ -26,6 +26,7 @@ export default function Form() {
 
     console.log(userObj)
     const addInterest = () => {
+        if(interestVal === '') return;
         setInterests([...interesets, interestVal]);
         // setUserObj({ ...userObj, interests: [...interesetsArr] });
         setInterestVal('');
@@ -104,7 +105,7 @@ export default function Form() {
                                 <Grid item sm={8} xs={12}>
                                     <SelectBox
                                         placeholder='Select your Field'
-                                        onSelect={(e) => handleVal('field', e)}
+                                        onSelect={(e) => handleVal('field/program', e)}
                                         options={['Bio Science', 'Computer Science', 'Arts']}
                                     />
                                 </Grid>
@@ -160,7 +161,7 @@ export default function Form() {
                                 <Grid item sm={8} xs={12}>
                                     <SelectBox
                                         placeholder='Select your Field'
-                                        onSelect={(e) => handleVal('field', e)}
+                                        onSelect={(e) => handleVal('field/program', e)}
                                         options={['Pre Medical', 'Pre Engineering', 'Computer Science', 'Arts', 'Commerce']}
                                     />
                                 </Grid>
@@ -211,12 +212,12 @@ export default function Form() {
                                         style={{ border: '1px solid lightgray' }} />
                                 </Grid>
                                 <Grid item sm={4} xs={12}>
-                                    <div className="form-heading1">Field:</div>
+                                    <div className="form-heading1">Program:</div>
                                 </Grid>
                                 <Grid item sm={8} xs={12}>
                                     <SelectBox
-                                        placeholder='Select your Field'
-                                        onSelect={(e) => handleVal('field', e)}
+                                        placeholder='Select your Program'
+                                        onSelect={(e) => handleVal('field/program', e)}
                                         options={universityFields}
                                     />
                                 </Grid>

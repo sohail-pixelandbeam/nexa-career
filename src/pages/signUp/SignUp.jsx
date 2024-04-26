@@ -28,28 +28,6 @@ export default function SignUp() {
     const navigate = useNavigate();
     const isMobile = useIsMobile();
     const steps = [1, 2];
-    const pakistan_cities = [
-        "Karachi",
-        "Lahore",
-        "Islamabad",
-        "Rawalpindi",
-        "Faisalabad",
-        "Multan",
-        "Gujranwala",
-        "Quetta",
-        "Peshawar",
-        "Sialkot",
-        "Hyderabad",
-        "Gujrat",
-        "Bahawalpur",
-        "Sargodha",
-        "Sukkur",
-        "Larkana",
-        "Sheikhupura",
-        "Jhang",
-        "Rahim Yar Khan",
-        "Mardan"
-    ]
 
     let [isLoading, setIsLoading] = useState(false);
     let [openSnack, setOpenSnack] = useState(false);
