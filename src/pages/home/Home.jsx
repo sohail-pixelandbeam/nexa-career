@@ -26,8 +26,10 @@ import person3 from '../../assets/img/person3.png';
 import arrowImg from '../../assets/img/arrowImg.png';
 import Footer from '../../components/footer/Footer';
 import QuestionAnswer from '../../components/questionAnswer/QuestionAnswer';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
+    const navigate = useNavigate();
     let [activeTab, setActiveTab] = useState('For Students')
     const statsData = [
         {
@@ -86,25 +88,29 @@ export default function Home() {
             icon: icon11,
             title: 'Pool of 550+ career choices',
             text: "Find the perfect career pathway that's just right for you",
-            btnText: 'Know Yourself Better'
+            btnText: 'Know Yourself Better',
+            to:'/Form'
         },
         {
             icon: icon11,
             title: 'Personalised Psychometric Assessment',
             text: "Helps you to identify your Personality, Areas of Interest and Aptitude Level.",
-            btnText: 'Know Yourself Better'
+            btnText: 'Know Yourself Better',
+            to:'/Form'
         },
         {
             icon: icon12,
-            title: 'Chat With Real Experts',
+            title: 'Chat With Nexa',
             text: "Interact with Real Counselors, not Bots. Get answers for your quick career-related questions.",
-            btnText: 'Professional Guidance'
+            btnText: 'Professional Guidance',
+            to:'/AIBot'
         },
         {
             icon: icon13,
             title: 'Pick The Right College',
             text: "We’ll help you choose the perfect college fit in Pakistan or Abroad.",
-            btnText: 'Pakistan or Abroad'
+            btnText: 'Pakistan or Abroad',
+            to:'/Form'
         }
     ]
 
@@ -229,9 +235,11 @@ export default function Home() {
                             <div className="home-hero-btns">
                                 <Btn
                                     label='Generate AI Tutoring'
+                                    onClick={() => navigate('/Form')}
                                 />
                                 <Btn
                                     label='Contact Us'
+                                    onClick={() => navigate('/ContactUs')}
                                     style={{ color: 'black', background: 'transparent', fontFamily: 'Poppins-Bold' }}
                                 />
                             </div>
@@ -284,7 +292,9 @@ export default function Home() {
                 <Grid container spacing={5}>
                     {data2.map((item, index) => (
                         <Grid item md={3} sm={6} xs={12} key={index}>
-                            <div className=" home-sec3-card">
+                            <div className=" home-sec3-card"
+                            onClick={()=>navigate(item?.to)}
+                            >
                                 <img className='home-sec3-icon' src={item?.icon} alt="icon" />
                                 <div className="home-sec3-heading">{item?.title}</div>
                                 <div className="home-sec3-text">{item?.text}</div>
@@ -339,7 +349,8 @@ export default function Home() {
                                 navigate your career path with the help of our
                                 Expert certified Counselors</div>
                             <Btn
-                                label='Chat With AI Expert'
+                                label='Chat With Nexa'
+                                onClick={()=>navigate('/AIBot')}
                             />
                         </div>
                     </Grid>
@@ -365,7 +376,8 @@ export default function Home() {
                                 <br /><br />
                                 You can change the course of a student’s life.</div>
                             <Btn
-                                label='Chat With AI Expert'
+                                label='Chat With Nexa'
+                                onClick={()=>navigate('/AIBot')}
                             />
                         </div>
                     </Grid>
@@ -401,10 +413,12 @@ export default function Home() {
                 <div className='home-sec7-btnsBox'>
                     <Btn
                         label='Contact Us'
+                        style={{background:'#FFA63D'}}
+                        onClick={()=>navigate('/ContactUs')}
                     />
                     <Btn
-                        label='Explore Jobs'
-                        style={{background:'#FFA63D'}}
+                        label='Chat with Nexa'
+                        onClick={()=>navigate('/AIBot')}
                     />
                     <img src={arrowImg} className='home-arrowImg' alt="img" />
                 </div>
