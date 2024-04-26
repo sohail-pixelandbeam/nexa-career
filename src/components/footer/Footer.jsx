@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Footer.css'
 import pattern1 from '../../assets/img/pattern1.png'
 import pattern2 from '../../assets/img/pattern2.png'
@@ -20,10 +20,13 @@ import PlaceIcon from '@mui/icons-material/Place';
 import forward from '../../assets/img/forward.png'
 import Btn from '../btn/Btn'
 import {  useNavigate } from 'react-router-dom'
+import Snack from '../snack/Snack'
+import Loader from '../loader/Loader'
 
 
 export default function Footer({ hideContact }) {
-    const navigate = useNavigate()
+    let [formData,setFormData] = useState(null)
+    const navigate = useNavigate();
     const data1 = [
         {
             img: facebook,
@@ -44,6 +47,75 @@ export default function Footer({ hideContact }) {
     ]
     // const data1 = [facebook, twitter, linkedin, p]
     const links = [ {name:'AI Bot', to:'/AIBot'}, {name:'Contact Us', to:'/ContactUs'}];
+
+    let [isLoading, setIsLoading] = useState(false);
+    let [openSnack, setOpenSnack] = useState(false);
+    let [severity, setSeverity] = useState('error')
+    let [snackMsg, setSnackMsg] = useState('');
+    const handleCloseSnack = () => {
+        setOpenSnack(false);
+        setSnackMsg('');
+        setSeverity('error');
+    }
+
+    const sendContactEmail = async () => {
+        setIsLoading(true);
+        const { firstName, lastName, email, phoneNumber } = formData;
+        if (firstName && lastName && email && phoneNumber) {
+            try {
+                // Prepare data for sending email
+                const data = {
+                    service_id: 'nexa-career',
+                    template_id: 'template_62e2jal',
+                    user_id: 'oYKRBmPYmAeLWvmHP',
+                    template_params: {
+                        firstName,
+                        lastName,
+                        email,
+                        phoneNumber,
+                        'g-recaptcha-response': '03AHJ_ASjnLA214KSNKFJAK12sfKASfehbmfd...' // Include reCAPTCHA token if needed
+                    }
+                };
+    
+                // Send email using EmailJS API
+                const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+    
+                if (response.ok) {
+                    setSnackMsg("Email sent successfully");
+                    setSeverity("success");
+                    setOpenSnack(true);
+                    setIsLoading(false);
+                    setFormData({
+                        firstName:'',
+                        lastName:'',
+                        email:'',
+                        phoneNumber:''
+                    })
+                } else {
+                    throw new Error('Failed to send email');
+                }
+            } catch (error) {
+                console.error('Error sending email:', error);
+                setSnackMsg(error.message || 'Error sending email');
+                setSeverity("error");
+                setOpenSnack(true);
+                setIsLoading(false);
+            }
+        } else {
+            setOpenSnack(true);
+            setSnackMsg("Required fields are missing.");
+            setIsLoading(false);
+        }
+    };
+    
+
+
     return (
         <div className='footer-main'>
             {/* <img src={pattern1} alt="pattern" className='footer-pattern1' />
@@ -61,18 +133,29 @@ export default function Footer({ hideContact }) {
                             <div className="footer-contact-inputsBox">
                                 <InputField
                                     placeholder='First Name...'
+                                    value={formData?.firstName}
+                                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                                 />
                                 <InputField
                                     placeholder='Last Name...'
+                                    value={formData?.lastName}
+                                    onChange={(e)=> setFormData({ ...formData, lastName: e.target.value })}
                                 />
                             </div>
                             <InputField
-                                placeholder='Your E-mail...' />
+                                placeholder='Your E-mail...'
+                                value={formData?.email}
+                                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                />
                             <div className="footer-contact-inputsBox">
                                 <InputField
                                     placeholder='Your Phone...'
+                                    value={formData?.phoneNumber}
+                                    onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
                                 />
-                                <button className='footer-btn'>
+                                <button className='footer-btn'
+                                onClick={sendContactEmail}
+                                >
                                     Send Now
                                 </button>
                             </div>
@@ -140,6 +223,8 @@ export default function Footer({ hideContact }) {
                     <div className="footer-text footerLink-hover">Contact Us</div>
                 </div>
             </div>
+            <Snack msg={snackMsg} open={openSnack} onClose={handleCloseSnack} severity={severity} />
+            <Loader isLoading={isLoading} />
         </div>
     )
 }
