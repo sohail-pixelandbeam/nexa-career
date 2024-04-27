@@ -75,10 +75,10 @@ export default function AIBot() {
                 {/* main hero  */}
                 <div className="aiBot-heading1 text-center" >World-class <span>AI</span> for education
                     & Career</div>
-                <div className="aiBot-subHeading">Say hello to NextBOT, Nexa Career’s AI-powered guide. Tutor for learners. Assistant for teachers.</div>
+                <div className="aiBot-subHeading">Say hello to Nexa, Nexa Career’s AI-powered guide. Tutor for learners. Assistant for teachers.</div>
                 <div className="aiBot-hero-btns">
                     <Btn
-                        label='Get NextBOT'
+                        label='Chat with Nexa'
                         style={{ background: '#FFA63D' }}
                     />
                     <Btn
@@ -115,7 +115,7 @@ export default function AIBot() {
                         <div className="aiBot-subHeading1">
                             Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.
                             <br /> <br />
-                             Created by experts, Nexa Career’s library of trusted practice and lessons covers math, science, and more. Always free for learners.
+                            Created by experts, Nexa Career’s library of trusted practice and lessons covers math, science, and more. Always free for learners.
                         <br /><br />
                         With Nexa Academy, We can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student.    
                         </div>
@@ -137,7 +137,7 @@ export default function AIBot() {
                         <div className="aiBot-subHeading1" style={{paddingRight:'0px'}}>
                             Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.
                             <br /> <br />
-                             Created by experts, Nexa Career’s library of trusted practice and lessons covers math, science, and more. Always free for learners.
+                            Created by experts, Nexa Career’s library of trusted practice and lessons covers math, science, and more. Always free for learners.
                         <br /><br />
                         With Nexa Academy, We can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student.    
                         </div>
@@ -148,7 +148,7 @@ export default function AIBot() {
                         <div className="aiBot-subHeading1">
                             Students practice at their own pace, first filling in gaps in their understanding and then accelerating their learning.
                             <br /> <br />
-                             Created by experts, Nexa Career’s library of trusted practice and lessons covers math, science, and more. Always free for learners.
+                            Created by experts, Nexa Career’s library of trusted practice and lessons covers math, science, and more. Always free for learners.
                         <br /><br />
                         With Nexa Academy, We can identify gaps in their students’ understanding, tailor instruction, and meet the needs of every student.    
                         </div>
@@ -191,10 +191,12 @@ export default function AIBot() {
                 <div className='home-sec7-btnsBox'>
                     <Btn
                         label='Contact Us'
+                        style={{background:'#FFA63D'}}
+                        onClick={()=>navigate('/ContactUs')}
                     />
                     <Btn
-                        label='Explore Jobs'
-                        style={{ background: '#FFA63D' }}
+                        label='Chat with Nexa'
+                        onClick={()=>navigate('/AIBot')}
                     />
                     <img src={arrowImg} className='home-arrowImg' alt="img" />
                 </div>
