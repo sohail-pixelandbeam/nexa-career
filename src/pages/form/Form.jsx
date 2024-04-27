@@ -14,9 +14,11 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import universityFields from '../../assets/json/universityFields.json';
 
 export default function Form() {
+    const navigate = useNavigate();
     let [userObj, setUserObj] = useState({});
     let [interestVal, setInterestVal] = useState('');
     let [interesets, setInterests] = useState([]);
+    
 
     const handleVal = (key, val) => {
         setUserObj({ ...userObj, [key]: val });
@@ -282,7 +284,8 @@ export default function Form() {
                                 <br /><br />
                                 You can change the course of a student’s life.</div>
                             <Btn
-                                label='Chat With AI Expert'
+                                label='Chat With Nexa'
+                                onClick={()=>Navigate('/AIBot')}
                             />
                         </div>
                     </Grid>
