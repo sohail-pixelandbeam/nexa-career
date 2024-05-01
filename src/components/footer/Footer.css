@@ -135,6 +135,18 @@
     gap: 5px;
     margin-bottom: 15px;
     cursor: pointer;
+    height: 28px;
+}
+
+.footer-link-text1{
+    color:white;
+    font-family: SpaceGrotesk-Regular;
+    /* font-size: 18px; */
+    gap: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 14px;
 }
 
 .footer-item{

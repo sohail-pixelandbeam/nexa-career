@@ -12,6 +12,7 @@ import InputField from '../../components/inputField/InputField';
 import SelectBox from '../../components/selectBox/SelectBox';
 import CancelIcon from '@mui/icons-material/Cancel';
 import universityFields from '../../assets/json/universityFields.json';
+import { useNavigate } from 'react-router-dom';
 
 export default function Form() {
     const navigate = useNavigate();
@@ -26,13 +27,11 @@ export default function Form() {
     }
 
 
-    console.log(userObj)
     const addInterest = () => {
         if(interestVal === '') return;
         setInterests([...interesets, interestVal]);
         // setUserObj({ ...userObj, interests: [...interesetsArr] });
         setInterestVal('');
-        // console.log(userObj);
     }
 
     const removeInterest = (index) => {
@@ -45,7 +44,7 @@ export default function Form() {
     }, [])
     return (
         <div>
-            <NavBar />
+            <NavBar active={'Form'} />
             <section className='home-hero'>
                 {/* main hero  */}
                 <Grid container spacing={1}>

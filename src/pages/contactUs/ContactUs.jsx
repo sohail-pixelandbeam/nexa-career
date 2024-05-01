@@ -31,7 +31,7 @@ export default function ContactUs() {
     }, [])
     return (
         <div>
-            <NavBar />
+            <NavBar active={'Contact Us'} />
            
             <section className="padding"/>
 

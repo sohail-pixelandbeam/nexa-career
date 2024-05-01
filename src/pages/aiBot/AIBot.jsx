@@ -70,7 +70,7 @@ export default function AIBot() {
 
     return (
         <div>
-            <NavBar />
+            <NavBar active={'AI Bot'}  />
             <section className='aiBot-hero'>
                 {/* main hero  */}
                 <div className="aiBot-heading1 text-center" >World-class <span>AI</span> for education

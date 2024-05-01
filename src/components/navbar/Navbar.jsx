@@ -28,6 +28,7 @@ export default function NavBar({ active }) {
     const [isUserLoggedIn, setIsUserLoggedIn] = useState(false);
 
     useEffect(() => {
+        if(active) setActiveLink(active);
         // Retrieve user data from local storage
         const storedUserData = localStorage.getItem('userData');
         if (storedUserData) {
@@ -70,7 +71,9 @@ export default function NavBar({ active }) {
     const handleNavigation = (name, path) => {
         setMenu(false);
         setActiveLink(name);
-        navigate(path)
+        if(path){
+            navigate(path)
+        }
     }
 
     const handleLogout = () => {
@@ -79,9 +82,6 @@ export default function NavBar({ active }) {
         // Redirect to the sign-in page
         navigate('/signin');
     };
-
-
-
 
 
     return (
@@ -140,11 +140,14 @@ export default function NavBar({ active }) {
                                 onClick={() => handleNavigation('Form', '/Form')}
                             >Form
                             </div>
-                            {/* <div
-                                className={activeLink === 'Career' ? 'link-nb active' : 'link-nb'}
-                                onClick={() => handleNavigation('Career', '/')}
-                            >Career
-                            </div> */}
+                            <div
+                                // className={activeLink === 'Resume Builder' ? 'link-nb active' : 'link-nb'}
+                                onClick={() => handleNavigation('Resume Builder')}
+                            >
+                                <a 
+                                className={activeLink === 'Resume Builder' ? 'link-nb active' : 'link-nb'}
+                                href='https://nexa-career-resume-builder.vercel.app' target='_blank' >Resume Builder</a>
+                            </div>
                             <div
                                 className={activeLink === 'Contact Us' ? 'link-nb active' : 'link-nb'}
                                 onClick={() => handleNavigation('Contact Us', '/ContactUs')}

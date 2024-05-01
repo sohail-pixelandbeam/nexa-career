@@ -49,7 +49,7 @@ export default function Footer({ hideContact }) {
     const links = [ 
         {name:'AI Bot', to:'/AIBot'}, 
         {name:'Form', to:'/Form'},
-        {name:'Resume Builder', to:'/'},
+        {name:'Resume Builder', to:'https://nexa-career-resume-builder.vercel.app'},
 
     ];
 
@@ -196,10 +196,17 @@ export default function Footer({ hideContact }) {
                             links.map(item => {
                                 return (
                                     <div className="footer-link-text" key={item?.name}
-                                    onClick={()=>navigate(item?.to)}
+                                    onClick={()=>{
+                                        if(item?.name !== 'Resume Builder'){
+                                            navigate(item?.to)
+                                        }
+                                    }}
                                     >
                                         <ArrowForwardIosIcon sx={{ color: '#FFA63D', fontSize: '14px' }} />
-                                        {item?.name}
+                                        {item?.name !== 'Resume Builder' ? item?.name 
+                                        : <a className='footer-link-text1' href={item?.to} target='_blank' >{item?.name}</a>
+                                        } 
+                                        
                                     </div>
                                 )
                             })
